@@ -1,3 +1,9 @@
+# see also:
+# https://docs.travis-ci.com/user/sonarqube/
+# https://docs.sonarqube.org/display/SONAR/User+Token
+# https://travis-ci.org/orrrg/test/branches
+# https://sonarqube.com/organizations/orrrg/projects
+
 language: java
 sudo: false
 jdk:
