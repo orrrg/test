@@ -8,7 +8,10 @@ addons:
     organization: "orrrg"
     token:
       # this one is to be able to run analysis on SonarQube
-      secure: PuSRCjop4ESPe4X+4CExu4M/ED9BzLskIMgbenyV5Ko3h567fBx1h5SMZtgQE6XRTdgvjYoghec//4eUiRteot3+Hyn3kZkaoLcCkcvbngiJ1nvLyCOXh/GJif8sFUNpMRORiSKwqZ54TzK6f6yeLtCMwt2NggELU0y7nJEnqYSa/VbCQJP3dDr0Ov5ubo0cp8gDTy+jZe8mC+auJHxRLaYMEbPv2XH+hf5BDf4CVQB69d6KTEOHq1xVb/MR2b5bUao8uA48w/3B1BPAnJ+IzRVWOptETaY0MN2a3Mom65gqNOfACX4VAMoBkmP/0xAFhGDplNUzYgyUCdji41X79KOt0EV6v3SXFczdhDRY3qt+JCHCmuktfOfgJc9g/GFAo76nxYSB5bcUqX9y4ug5nZbitHhT6YY3GitH+fk0l5dUi70Tyw/KAWOOti+3yEWL4R21mO/HWSnpBzP5X650UdF+iLZO8N5R9rS0tF1l2CTSCbG75acem8wst+UkYOhUZIBminlb0KXZqWNmKwJAIgvs4kttviNBnb6ZxqCtGs2ajrLDRoSUZE5mf39bCw3qYQXEixa+iXJWLZmHDQn2GMZGVHP4A0GaPXWMYkTS1intd+kgeBp4YjcGHxBIBaq3QrKNktFUc7agxQ8EedZCZ8XBaINWMs54yUOU0PZMjFo=
+      # this is only token, without variable name. only a secret
+      # (this is different from when you set an environment variable)
+      secure: DM3QBbsYiHRMKg90kd6CpzFPn/TGCw60VHkKYY2BBlJUfXoqDj+SWS8MmpG3WMDQ4NCNZ1YmQ3+qNv3DdQg5q9iBUT10CFfLcGar7EGtEDwu+p4E6Oi1n18pUmh9cbIRLCpNA3LHUbNAmtzgPTsWi5u9lqo+CSfsJ3eUxwsuaDFMOIdgv/gXQ5q7Zsxs9QzQgX9Gqwc9YtNMmAxa25KGSsmBVKy8Y2LcijvlwAlRBWIGw8VWOJBcBH3QPH0prqM4GAh/9eMF1p9fQEmaeorGAFTrL1BNWXIlFALxAWp0TKyyfiN6I5d8gSh9SklEQkXPphCIfH2lnyY95PcoA4eMVvShYCcTqY9N/8HpMJ+3Qtg8Krws4CL3iJp/UE3CzsxfUpGz1nyWt+a0WnTIVfkn0qQJpTMCJMJ6lxHmpHQEOYchq8WUKKbxtPuz+IHJ3c3LhCmmxhPvsirSZZH5epq4G3MTYcpxGUQl9EjFGVitor348gIqGazA0UySDtTKqnzB7Vp8qNvvnGuCxVD+K+imMhqDfoJvj+fT7TsegRO+Yq6zEdc7FC8zQP200wXVNePAAOQifBZkkRjIoThiMJXp8pnbZF4maWWT62yzZ7nTtRq/qc9gsTYtCEH/Jzny7rjRZKdQBaHsRd/oM106EExVHNew6ds+McnlSso/vokJEX0=
+
 
     github_token:
       # this one is for pull requests (to add comments on them in GitHub)
