@@ -12,6 +12,9 @@ addons:
     github_token:
       # this one is for pull requests (to add comments on them in GitHub)
       secure: czhz7DVkptSb6V+4HgBQKErFUT1vo7i5w0WYhd7uiCRrx+R3MdP8Gizhhw9OcJF3DW/0RS3jl/YNTCbuWT5r/IcDDTqiWLzceOmWhalvcXzLOsWmfTIhVEXx99lR/BQVpsb0W4mrsMotTx1b9IKy6kAhgDywCM3zcO/BSxKLsLiaGjZcazyN3TySw9N8rr7pBrGrZV6KuJT8LesUBRqtcaPLJGwezS/UiHjEbiuVnEYhxZ8yP1ejcgXX/XfE6Ti9qFv5+u3VQYEVUX076Y4n4Y28rAhBAEBjAktloN3VRjIn+rnMOheYZMYFWhRj6IE1nATVdjehL++SIazgCFAUOoV4KmgWjUDqmkIhr3mHyDY5mPLclN+8OrHHIWSUW0UkTH7hmXeB31nI8azKCycrtH9QbH4L+Y4Lb1OZFmR6r8BBOOav51iAmQguRA/uGLxnYZM12GjTWZ+Abof6sUKv06qyDeFhBgrL290SoEJ5BxpSDM/uWb/IsboaJUEVqggPhS1FvA9WafqTdfUl+RpY9Xj7zGlLtVq/9eV0rdCrc1FNAuMVg5ftDsMWmbcZHcbwntynqA1BQfD5dSjP8/i+1yCi6zMzKIPABDTkpMLRQ9zDOW3t8SctK0s1YigZ7CVEs1VVlkBwMOyIS+BigeYgqVO5AImno5DWhy0bKBOEliA=
+    branches:
+    - master
+    - branch
 
 script:
 # the following command line builds the project, runs the tests with coverage and then execute the SonarQube analysis
