@@ -2,9 +2,6 @@ test
 ====
 
 [![Build Status](https://travis-ci.org/orrrg/test.svg)](https://travis-ci.org/orrrg/test/)
-[![Quality Gate](https://sonarqube.com/api/badges/gate?key=pl.kubiczak.orrrg.test:orrrgtest)](https://sonarqube.com/dashboard/index/pl.kubiczak.orrrg.test:orrrgtest)
+[![sonarcloud.io](https://sonarcloud.io/api/project_badges/measure?project=orrrg_test&metric=alert_status)](https://sonarcloud.io/dashboard?id=orrrg_test)
 
 Test repository for Test Project
-The hook for redmine mirror was added
-
-

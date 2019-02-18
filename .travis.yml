@@ -5,32 +5,26 @@
 # https://sonarqube.com/organizations/orrrg/projects
 
 language: java
-sudo: false
-jdk:
-- oraclejdk8
 
-addons:
-  sonarqube:
-    organization: "orrrg"
-    token:
-      # this one is to be able to run analysis on SonarQube
-      # this is only token, without variable name. only a secret
-      # (this is different from when you set an environment variable)
-      secure: DM3QBbsYiHRMKg90kd6CpzFPn/TGCw60VHkKYY2BBlJUfXoqDj+SWS8MmpG3WMDQ4NCNZ1YmQ3+qNv3DdQg5q9iBUT10CFfLcGar7EGtEDwu+p4E6Oi1n18pUmh9cbIRLCpNA3LHUbNAmtzgPTsWi5u9lqo+CSfsJ3eUxwsuaDFMOIdgv/gXQ5q7Zsxs9QzQgX9Gqwc9YtNMmAxa25KGSsmBVKy8Y2LcijvlwAlRBWIGw8VWOJBcBH3QPH0prqM4GAh/9eMF1p9fQEmaeorGAFTrL1BNWXIlFALxAWp0TKyyfiN6I5d8gSh9SklEQkXPphCIfH2lnyY95PcoA4eMVvShYCcTqY9N/8HpMJ+3Qtg8Krws4CL3iJp/UE3CzsxfUpGz1nyWt+a0WnTIVfkn0qQJpTMCJMJ6lxHmpHQEOYchq8WUKKbxtPuz+IHJ3c3LhCmmxhPvsirSZZH5epq4G3MTYcpxGUQl9EjFGVitor348gIqGazA0UySDtTKqnzB7Vp8qNvvnGuCxVD+K+imMhqDfoJvj+fT7TsegRO+Yq6zEdc7FC8zQP200wXVNePAAOQifBZkkRjIoThiMJXp8pnbZF4maWWT62yzZ7nTtRq/qc9gsTYtCEH/Jzny7rjRZKdQBaHsRd/oM106EExVHNew6ds+McnlSso/vokJEX0=
-    github_token:
-      # this one is for pull requests (to add comments on them in GitHub)
-      # created with something like:
-      # `travis encrypt 8bae8bae8baeb8baeby8b1`
-      secure: n8tQmEBUHZGPGNygWlCUsaPiBZwGAgM5wtYgfRFh63UguwsmKPT5t1pL2Y3iAYhvVWXp3YLxP4qNGpKwIbC83C7RXCzsEiOTQDk8R4O97c4IVhyPhCxD3hEDoISjiiMdAUbXHmEOsdokks9pAN/Tnewr/ZQJQfbWe9Uc7GUcSHdg/MwClM6XoNm5jr3guNaIRrTCDLz/z0QHJE1h8NjOWaHygKP3A5PEYZdT1fGND88tFb1fQeGYLDPAx+VYTi/+ailgAGO4h7LJ0wEeF/I9wEZ3Zsx7OGrtpGIUT1itGDEwZYD9oEybs5QHSXSMT8+0j2Yxs/6dsyy6oK0EI9wP1zFUDUeqQGmgYJYcsC8LoGzRUmt2WmCZQtJgOf49H5A0xtgbp2AnXQINdk4obk4nTBmvSIvszaL/NWXU5J0oWdEwnnEvgkq9n3LCPs3MMuFUqxHlumgr8OXseWQvm8vQbpQsbfWV/TEMBiOCF84e8oAjcZJZ7BRw8NJXDtJdMFFylyDsc/EBb4jHJkcW623gj632QIBX/tDH2uJOCZqlaSZjf9JKVShw1NnDa8543hJPqC8WMdLm7fpa8w3Mw5tkRIvxNcK8P1QVtGj1EO4kMVwSDJqOOWaH6cMr2vRDy0qufuaaYZfO1UevZTNVZlzGzc6Zf9NhJB86JfQKGtLEzvI=
-    branches:
-    - master
-    - branch
+jdk:
+  - openjdk8
+  - oraclejdk8
+  - oraclejdk9
 
 script:
-# the following command line builds the project, runs the tests with coverage and then execute the SonarQube analysis
-- mvn -e clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
+  - mvn -B clean install
+
+addons:
+  sonarcloud:
+    organization: orrrg
+    token:
+      secure: KaeSET0OMEomrgxHYL1ickTdiAgAJ8CdvgohsEJLJo7C2WZIfrioFHT/YSRu/1BL+3W3TTLgqTIc2XjROIQstSRm0nMYDCxqhcW9/IeST/gOcWPOMxx3ymp/+rDjscFDUj3zKbcWutFiK0vYRi++o81bYVixrjcB93GuVx1++F4VjfDSSZgN3b776G87x4CXOCpmarU8kkrYnIwslkb4bXz2VBg/EacWRb1gbwY8dK0DrNmEU9n0kUGVX3MvLlWRmj0znPuLJ6CGX1cNXIlaRsYzCgukXlHr1PBAL4Gb17PeBo2zBYewm1qW6pdxR8j//wXHnzaG/vFy+wCsbCEueKxPB4Bxg/JHXELVDwbCaU+PU6t6iQ7RACX8evHhTjlnVeEXUsOcUstI4J0cJxciAFUNgqYw71x6sF1hoVzU7UWf3Z0W0ZaOPbkizCnyqKIscXfkQY9R17t45Z7BsAdnrunAGfzI0EAqszFHK8bFxM1HsT22H13e0gj+12GVgDL+MsScLin/CI4hMF5OwAdiB4sooiO5u2MyQxmF30Ll6ZmTZn/Quu9k+zOLZtWxUQmKZwXwDt3it0S8QjJ90wiw6DOvQ0qca9ql2Md0GGHpbasPjxgJcf+ymXdwiRvS8K4A3dUOZAXGMG4PGR7Xe8X2Ulw8sONh7LeFTTe1KL3WGSM=
+
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarQube analysis
+  - mvn -e clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 
 cache:
   directories:
-  - "$HOME/.m2/repository"
-  - "$HOME/.sonar/cache"
+    - "$HOME/.m2/repository"
+    - "$HOME/.sonar/cache"
